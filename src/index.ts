@@ -7,6 +7,9 @@ export default class TopPage {
     window.addEventListener('mousemove', e => {
       canvas.mouseMoved(e.clientX, e.clientY)
     })
+    window.addEventListener('scroll', () => {
+      canvas.scrolled(window.scrollY)
+    })
   }
 }
 

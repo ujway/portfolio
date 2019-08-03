@@ -10,9 +10,11 @@ export default class Canvas {
   light: any
   mesh: any
   mouse: any
+  scrollY: any
 
   constructor() {
     this.mouse = new Vector2(0, 0)
+    this.scrollY = window.scrollY
 
     this.w = window.innerWidth
     this.h = window.innerHeight
@@ -57,6 +59,10 @@ export default class Canvas {
     this.light.position.y = this.mouse.y
   }
 
+  scrolled(y) {
+    this.scrollY = y
+  }
+
   render() {
     requestAnimationFrame(() => {
       this.render()
@@ -67,8 +73,9 @@ export default class Canvas {
     this.mesh.rotation.x = sec * (Math.PI / 4)
     this.mesh.rotation.y = sec * (Math.PI / 4)
 
-    this.mesh.rotation.x += 0.01;
-    this.mesh.rotation.y += 0.01;
+    this.mesh.rotation.x += 0.01
+    this.mesh.rotation.y += 0.01
+    this.mesh.position.y = this.scrollY
 
     this.renderer.render(this.scene, this.camera)
   }
