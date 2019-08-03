@@ -1,12 +1,9 @@
-import * as React from 'react';
+import * as React from 'react'
+import Thing from './Thing'
 
-export interface AppProps {
-  hoge: string;
-  fuge: string;
-}
+export interface AppProps {}
 
-export class App extends React.Component<AppProps, {}> {
-  render() {
-    return <h1>Hello {this.props.hoge} and {this.props.fuge}!</h1>;
-  }
+const App = () => {
+  return <Thing hoge='hoge_props'/>
 }
+export default App
