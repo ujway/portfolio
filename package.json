@@ -19,6 +19,7 @@
     "@types/react-dom": "^16.8.5",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
+    "html-webpack-plugin": "^3.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "typescript": "^3.5.3",

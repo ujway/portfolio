@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path');
 
 module.exports = {
@@ -36,6 +37,11 @@ module.exports = {
     filename: 'bundle.js'
   },
   devtool: "source-map",
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.html"
+    })
+  ],
   devServer: {
     contentBase: './dist'
   }

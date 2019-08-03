@@ -4,6 +4,6 @@ import * as ReactDOM from 'react-dom';
 import { App } from './components/App';
 
 ReactDOM.render(
-  <App hoge="TypeScript" fuge="React" />,
+  <App hoge="TypeScrip" fuge="React" />,
   document.getElementById('app')
 );
