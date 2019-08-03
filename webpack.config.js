@@ -16,6 +16,11 @@ module.exports = {
           loader: 'ts-loader'
         }]
       },
+      {
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        // loaders: ['style-loader', 'sass-loader'],
+      }
     ]
   },
   resolve: {
