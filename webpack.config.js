@@ -1,22 +1,41 @@
+const path = require('path');
+
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.tsx$/,
+        use: [{
+          loader: 'awesome-typescript-loader'
+        }]
+      },
+      {
+        test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: [{
+          loader: 'source-map-loader',
+          options: {
+            enforce: 'pre',
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
+        }]
       }
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    modules: [
+      "node_modules",
+      path.resolve('./src'),
+    ],
+    extensions: ['.tsx', '.js', '.ts', 'json']
   },
   output: {
-    path: __dirname + '/dist',
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     filename: 'bundle.js'
   },
+  devtool: "source-map",
   devServer: {
     contentBase: './dist'
   }
