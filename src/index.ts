@@ -3,7 +3,7 @@ import './scss/style'
 
 export default class TopPage {
   constructor() {
-    const canvas = new Canvas()
+    const canvas = new Canvas('scroll-container_title')
     window.addEventListener('mousemove', e => {
       canvas.mouseMoved(e.clientX, e.clientY)
     })
