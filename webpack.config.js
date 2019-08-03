@@ -1,48 +1,35 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const path = require('path');
+const path = require('path')
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: './src/index.ts',
+  output: {
+    path: path.join(__dirname, 'dist'),
+    publicPath: '/',
+    filename: 'bundle.js'
+  },
   module: {
     rules: [
       {
-        test: /\.tsx$/,
+        test: /\.ts$/,
         use: [{
-          loader: 'awesome-typescript-loader'
+          loader: 'ts-loader'
         }]
       },
-      {
-        test: /\.(js)$/,
-        exclude: /node_modules/,
-        use: [{
-          loader: 'source-map-loader',
-          options: {
-            enforce: 'pre',
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }]
-      }
     ]
   },
   resolve: {
     modules: [
-      "node_modules",
-      path.resolve('./src'),
+      path.resolve(__dirname, 'src'), 'node_modules',
     ],
-    extensions: ['.tsx', '.js', '.ts', 'json']
+    extensions: ['.ts', '.js', 'json']
   },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
-    filename: 'bundle.js'
-  },
-  devtool: "source-map",
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html"
+      template: './src/index.html'
     })
   ],
   devServer: {
     contentBase: './dist'
   }
-};
+}

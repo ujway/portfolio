@@ -5,24 +5,11 @@
   "repository": "https://github.com/ujway/portfolio",
   "author": "ujway <satoyu313@gmail.com>",
   "license": "MIT",
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
-    ]
-  },
   "dependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
-    "@types/react": "^16.8.24",
-    "@types/react-dom": "^16.8.5",
-    "awesome-typescript-loader": "^5.2.1",
-    "babel-loader": "^8.0.6",
+    "@types/three": "^0.103.2",
     "html-webpack-plugin": "^3.2.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "three": "^0.107.0",
+    "ts-loader": "^6.0.4",
     "typescript": "^3.5.3",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
