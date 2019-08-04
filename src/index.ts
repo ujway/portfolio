@@ -1,4 +1,5 @@
-import Canvas from './Canvas';
+import Canvas from './Canvas'
+import Cursor from './Cursor'
 import './scss/style'
 
 export default class TopPage {
@@ -10,6 +11,8 @@ export default class TopPage {
     window.addEventListener('scroll', () => {
       canvas.scrolled(window.scrollY)
     })
+    // const cursor = new Cursor(document.querySelector('.cursor'))
+    new Cursor(document.querySelector('.cursor'))
   }
 }
 
